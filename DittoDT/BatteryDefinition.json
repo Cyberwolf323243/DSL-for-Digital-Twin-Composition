@@ -1,0 +1,24 @@
+{
+	"@context": "https://www.w3.org/2022/wot/td/v1.1",
+	"@type": "tm:ThingModel",
+	"title": "Car Battery",
+	"description": "DT of a Car Battery",
+	"properties": {
+		"charge": {
+			"title": "Charge",
+			"type": "double"
+		},
+		"consumption": {
+			"title": "Consumption",
+			"type": "double"
+		}
+	},
+	"actions": {
+		"low_charge": {
+			"title": "low charge",
+			"description": "The Charge-Value is below 10%",
+			"type": "boolean"
+		}
+	}
+		
+}

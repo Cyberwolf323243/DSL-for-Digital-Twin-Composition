@@ -1,0 +1,19 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:example:Car;1",
+    "@type": "Interface",
+    "displayName": "Car",
+    "description": "A very simple car containg an electrical engine and a battery",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "DisplayName",
+            "schema": "string"
+        },
+        {
+            "@type": "Relationship",
+            "name": "contains",
+            "displayName": "contains"
+        }
+    ]
+}

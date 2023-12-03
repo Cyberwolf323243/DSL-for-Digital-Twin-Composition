@@ -1,0 +1,38 @@
+[
+  {
+    "name": "ProcessDTRoutedData",
+    "scriptFile": "SampleFunctionsApp.dll",
+    "entryPoint": "SampleFunctionsApp.ProcessDTRoutedData.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "eventGridEvent",
+        "direction": "In",
+        "type": "eventGridTrigger",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "ProcessHubToDTEvents",
+    "scriptFile": "SampleFunctionsApp.dll",
+    "entryPoint": "SampleFunctionsApp.ProcessHubToDTEvents.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "eventGridEvent",
+        "direction": "In",
+        "type": "eventGridTrigger",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  }
+]

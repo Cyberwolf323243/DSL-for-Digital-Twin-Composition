@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\EngineSimulator\\DeviceSimulator\\DeviceSimulator.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\EngineSimulator\\DeviceSimulator\\DeviceSimulator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\EngineSimulator\\DeviceSimulator\\DeviceSimulator.csproj",
+        "projectName": "DeviceSimulator",
+        "projectPath": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\EngineSimulator\\DeviceSimulator\\DeviceSimulator.csproj",
+        "packagesPath": "C:\\Users\\daria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\EngineSimulator\\DeviceSimulator\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\daria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Azure.Messaging.EventHubs": {
+              "target": "Package",
+              "version": "[5.9.3, )"
+            },
+            "Microsoft.Azure.Devices": {
+              "target": "Package",
+              "version": "[1.39.0, )"
+            },
+            "Microsoft.Azure.Devices.Client": {
+              "target": "Package",
+              "version": "[1.42.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

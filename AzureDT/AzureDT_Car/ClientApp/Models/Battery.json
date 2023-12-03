@@ -1,0 +1,26 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:example:Battery;1",
+    "@type": "Interface",
+    "displayName": "Battery",
+    "description": "TODO",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "Capacity",
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "Voltage",
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "ChargeLevel",
+            "schema": "double"
+        }
+
+    ]
+
+}

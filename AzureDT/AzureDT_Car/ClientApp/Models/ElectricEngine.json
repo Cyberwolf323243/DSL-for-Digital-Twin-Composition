@@ -1,0 +1,33 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:example:ElectricalEngine;1",
+    "@type": "Interface",
+    "displayName": "ElectricalEngine",
+    "description": "TODO",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "RPM",
+            "schema": "long",
+            "description": "How many rounds per minute the engine is spinning at."
+        },
+        {
+            "@type": "Property",
+            "name": "Utilization",
+            "schema": "double",
+            "description": "How many percent of the maximum power is being used"
+        },
+        {
+            "@type": "Property",
+            "name": "PowerConsumption",
+            "schema": "double",
+            "description": "How much electric power is consumed"
+        },
+        {
+            "@type": "Property",
+            "name": "PowerSavingMode",
+            "schema": "boolean"
+        }
+
+    ]
+}

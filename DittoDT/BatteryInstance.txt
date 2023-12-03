@@ -1,0 +1,7 @@
+{
+   /"definition/": /"mySite",
+   /"attributes/": {
+     /"charge/": /"50.0/",
+     /"consumption/": /"0.0/"
+   }
+ }

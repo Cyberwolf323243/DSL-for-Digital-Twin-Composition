@@ -1,0 +1,7 @@
+{
+   "definition": "https://eclipse-ditto.github.io/ditto-examples/wot/models/floor-lamp-1.0.0.tm.jsonld",
+   "attributes": {
+     "manufacturer": "ACME",
+     "VIN": "0815666337"
+   }
+ }

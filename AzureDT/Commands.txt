@@ -1,0 +1,67 @@
+###
+Commands for the tutorial https://learn.microsoft.com/en-us/azure/digital-twins/tutorial-end-to-end with filled placeholders. 
+###
+
+Names of Azure Components:-------------------------------------------------------------------
+DSL_DT-Composition
+CarTwin
+westeurope
+dtcarstorageaccount23
+DTCarFunctionApp
+DTCarIOTHub
+IOTHubEventSubscription
+5f873016-78cf-4919-acb8-4414789c31f8
+DTCarEventGrid
+DTCarEndpoint
+DTCarRoute
+DTCarUpdateUtilizationSubscription
+---------------------------------------------------------------------------------------------
+
+dotnet add package Azure.DigitalTwins.Core
+dotnet add package Azure.Identity
+
+az storage account create --name dtcarstorageaccount23 --location westeurope --resource-group DSL_DT-Composition --sku Standard_LRS
+
+az functionapp create --name DTCarFunctionApp --storage-account dtcarstorageaccount23 --functions-version 4 --consumption-plan-location westeurope --runtime dotnet-isolated --runtime-version 7 --resource-group DSL_DT-Composition
+
+dotnet publish -c Release -o publish
+
+az functionapp deployment source config-zip --resource-group DSL_DT-Composition --name DTCarFunctionApp --src "C:\Users\daria\OneDrive\Uni\Bachelorarbeit\Implementierung\BA_AzureDT\AzureDT_Car\FunctionsApp\publish.zip"
+
+check:---------------------------------------------------------------------------------------
+az functionapp function show --resource-group DSL_DT-Composition --name DTCarFunctionApp --function-name ProcessDTRoutedData
+
+az functionapp function show --resource-group DSL_DT-Composition --name DTCarFunctionApp --function-name ProcessHubToDTEvents
+---------------------------------------------------------------------------------------------
+
+az functionapp identity assign --resource-group DSL_DT-Composition --name DTCarFunctionApp
+
+az dt role-assignment create --resource-group DSL_DT-Composition --dt-name CarTwin --assignee "c4675e85-66df-44e0-9875-f0fddc3fc11e" --role "Azure Digital Twins Data Owner"
+
+az functionapp config appsettings set --resource-group DSL_DT-Composition --name DTCarFunctionApp --settings "ADT_SERVICE_URL=https://CarTwin.api.weu.digitaltwins.azure.net"
+
+az iot hub create --name DTCarIOTHub --resource-group DSL_DT-Composition --sku S1
+
+### replace 5f873016-78cf-4919-acb8-4414789c31f8 with own subscription id ###
+az eventgrid event-subscription create --name IOTHubEventSubscription --event-delivery-schema eventgridschema --source-resource-id /subscriptions/5f873016-78cf-4919-acb8-4414789c31f8/resourceGroups/DSL_DT-Composition/providers/Microsoft.Devices/IotHubs/DTCarIOTHub --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/5f873016-78cf-4919-acb8-4414789c31f8/resourceGroups/DSL_DT-Composition/providers/Microsoft.Web/sites/DTCarFunctionApp/functions/ProcessHubToDTEvents
+
+az iot hub device-identity create --device-id engine --hub-name DTCarIOTHub --resource-group DSL_DT-Composition
+
+az iot hub connection-string show --hub-name DTCarIOTHub
+
+az iot hub device-identity connection-string show --device-id engine --hub-name DTCarIOTHub
+
+az eventgrid topic create --resource-group DSL_DT-Composition --name DTCarEventGrid --location westeurope
+
+az dt endpoint create eventgrid --dt-name CarTwin --eventgrid-resource-group DSL_DT-Composition --eventgrid-topic DTCarEventGrid --endpoint-name DTCarEndpoint
+
+check:---------------------------------------------------------------------------------------
+az dt endpoint show --dt-name Cartwin --endpoint-name DTCarEndpoint
+---------------------------------------------------------------------------------------------
+
+az dt route create --dt-name CarTwin --endpoint-name DTCarEndpoint --route-name DTCarRoute
+
+az eventgrid event-subscription create --name DTCarUpdateUtilizationSubscription --event-delivery-schema eventgridschema --source-resource-id /subscriptions/5f873016-78cf-4919-acb8-4414789c31f8/resourceGroups/DSL_DT-Composition/providers/Microsoft.EventGrid/topics/DTCarEventGrid --endpoint-type azurefunction --endpoint /subscriptions/5f873016-78cf-4919-acb8-4414789c31f8/resourceGroups/DSL_DT-Composition/providers/Microsoft.Web/sites/DTCarFunctionApp/functions/ProcessDTRoutedData
+
+--------------------------------------------------------------------------------------------
+ObserveProperties engine Utilization engine RPM engine PowerConsumption engine PowerSavingMode

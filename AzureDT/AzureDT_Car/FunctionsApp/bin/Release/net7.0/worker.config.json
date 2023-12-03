@@ -1,0 +1,9 @@
+{
+  "description": {
+    "language": "dotnet-isolated",
+    "extensions": [ ".dll" ],
+    "defaultExecutablePath": "dotnet",
+    "defaultWorkerPath": "SampleFunctionsApp.dll",
+    "workerIndexing": "false"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\AzureDT_Car\\FunctionsApp\\SampleFunctionsApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\AzureDT_Car\\FunctionsApp\\SampleFunctionsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\AzureDT_Car\\FunctionsApp\\SampleFunctionsApp.csproj",
+        "projectName": "SampleFunctionsApp",
+        "projectPath": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\AzureDT_Car\\FunctionsApp\\SampleFunctionsApp.csproj",
+        "packagesPath": "C:\\Users\\daria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daria\\OneDrive\\Uni\\Bachelorarbeit\\Implementierung\\BA_AzureDT\\AzureDT_Car\\FunctionsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\daria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Azure.DigitalTwins.Core": {
+              "target": "Package",
+              "version": "[1.5.0-alpha.20230912.1, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.11.0-alpha.20230911.1, )"
+            },
+            "Microsoft.Azure.Functions.Worker": {
+              "target": "Package",
+              "version": "[1.19.0, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Extensions.EventGrid": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Sdk": {
+              "target": "Package",
+              "version": "[1.14.1, )"
+            },
+            "Microsoft.Azure.Services.AppAuthentication": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
