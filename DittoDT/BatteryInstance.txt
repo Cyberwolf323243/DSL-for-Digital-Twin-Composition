@@ -1,5 +1,5 @@
 {
-   /"definition/": /"mySite",
+   /"definition/": /"https://github.com/Cyberwolf323243/DSL-for-Digital-Twin-Composition/blob/main/DittoDT/BatteryDefinition.json",
    /"attributes/": {
      /"charge/": /"50.0/",
      /"consumption/": /"0.0/"
