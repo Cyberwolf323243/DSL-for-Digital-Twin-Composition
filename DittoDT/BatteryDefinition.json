@@ -2,9 +2,9 @@
 	"@context": "https://www.w3.org/2022/wot/td/v1.1",
 	"@type": "tm:ThingModel",
 	"title": "Car Battery",
-	"thingsID": "org.eclipse.ditto:battery",
 	"description": "DT of a Car Battery",
 	"properties": {
+		"name": "battery",
 		"charge": {
 			"title": "Charge",
 			"type": "double"
