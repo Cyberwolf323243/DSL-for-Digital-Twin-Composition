@@ -110,7 +110,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/eclipse/ditto/master/deployment/azure/arm/templates/kubernetesDeploy.json"
+                    "uri": "https://github.com/Cyberwolf323243/DSL-for-Digital-Twin-Composition/blob/main/DittoDT/azure/arm/templates/kubernetesDeploy.json"
                 },
                 "parameters": {
                     "clusterName": {

@@ -187,7 +187,7 @@
       "tags": {},
       "dependsOn": [
         "[concat('Microsoft.Resources/deployments/', 'ClusterResourceGroupRoleAssignmentDeployment')]",
-        "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]",
+        "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]"
       ],
       "properties": {
         "dnsPrefix": "[parameters('dnsPrefix')]",
