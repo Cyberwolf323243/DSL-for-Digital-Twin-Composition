@@ -12,7 +12,7 @@ version: '2.4'
 
 services:
   mongodb:
-    image: docker.io/mongo:5.0
+    image: docker.io/mongo:4.4.6
     mem_limit: 256m
     restart: always
     networks:
@@ -203,11 +203,19 @@ services:
        - ./index.html:/etc/nginx/html/index.html:ro
        - ../../documentation/src/main/resources/images:/etc/nginx/html/images:ro
        - ../../documentation/src/main/resources/wot:/etc/nginx/html/wot:ro
+       - ./certbot/www:/var/www/certbot:ro
     ports:
       - "${DITTO_EXTERNAL_PORT:-8080}:80"
     depends_on:
       - gateway
       - swagger-ui
+  
+  certbot:
+    image: docker.io/certbot/certbot
+    volumes:
+       - ./certbot/conf:/etc/letsencrypt:rw
+       - ./certbot/www:/var/www/certbot:rw
+    command: certonly --webroot -w /var/www/certbot -v --force-renewal --email darianlemke@web.de -d gqu06nfz1ecbe2lb.myfritz.net --agree-tos
 
 volumes:
   ditto_log_files:
